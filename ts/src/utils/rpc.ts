@@ -151,7 +151,7 @@ export async function simulateTransaction(
     };
   }
 
-  if (signers) {
+  if (signers && signers.length > 0) {
     config.sigVerify = true;
   }
 

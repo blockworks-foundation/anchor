@@ -229,7 +229,9 @@ export class AnchorProvider implements Provider {
       )
     ).blockhash;
 
-    tx = await this.wallet.signTransaction(tx);
+    // Don't ask the wallet to sign
+    //tx = await this.wallet.signTransaction(tx);
+
     const result = await simulateTransaction(
       this.connection,
       tx,
