@@ -216,6 +216,7 @@ pub fn generate_constraint_has_one(f: &Field, c: &ConstraintHasOne) -> proc_macr
     let field = match &f.ty {
         Ty::Loader(_) => quote! {#ident.load()?},
         Ty::AccountLoader(_) => quote! {#ident.load()?},
+        Ty::AccountLoaderDynamic(_) => quote! {#ident.load_fixed()?},
         _ => quote! {#ident},
     };
     let error = generate_custom_error(

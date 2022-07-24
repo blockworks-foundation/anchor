@@ -886,7 +886,9 @@ impl<'ty> ConstraintGroupBuilder<'ty> {
             && !matches!(self.f_ty, Some(Ty::Account(_)))
             && !matches!(self.f_ty, Some(Ty::Loader(_)))
             && !matches!(self.f_ty, Some(Ty::AccountLoader(_)))
+            && !matches!(self.f_ty, Some(Ty::AccountLoaderDynamic(_)))
         {
+            println!("{:?}", self.f_ty);
             return Err(ParseError::new(
                 c.span(),
                 "close must be on an Account, ProgramAccount, or Loader",

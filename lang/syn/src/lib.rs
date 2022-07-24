@@ -358,6 +358,21 @@ impl Field {
                     }
                 }
             }
+            Ty::AccountLoaderDynamic(_) => {
+                if checked {
+                    quote! {
+                        #container_ty::try_from(
+                            &#field,
+                        ).map_err(|e| e.with_account_name(#field_str))?
+                    }
+                } else {
+                    quote! {
+                        #container_ty::try_from_unchecked(
+                            &#field,
+                        ).map_err(|e| e.with_account_name(#field_str))?
+                    }
+                }
+            }
             _ => {
                 if checked {
                     quote! {
@@ -388,6 +403,9 @@ impl Field {
             },
             Ty::AccountLoader(_) => quote! {
                 anchor_lang::accounts::account_loader::AccountLoader
+            },
+            Ty::AccountLoaderDynamic(_) => quote! {
+                crate::state::AccountLoaderDynamic
             },
             Ty::Loader(_) => quote! {
                 anchor_lang::accounts::loader::Loader
@@ -438,6 +456,12 @@ impl Field {
                 }
             }
             Ty::AccountLoader(ty) => {
+                let ident = &ty.account_type_path;
+                quote! {
+                    #ident
+                }
+            }
+            Ty::AccountLoaderDynamic(ty) => {
                 let ident = &ty.account_type_path;
                 quote! {
                     #ident
@@ -509,6 +533,7 @@ pub enum Ty {
     ProgramAccount(ProgramAccountTy),
     Loader(LoaderTy),
     AccountLoader(AccountLoaderTy),
+    AccountLoaderDynamic(AccountLoaderDynamicTy),
     CpiAccount(CpiAccountTy),
     Sysvar(SysvarTy),
     Account(AccountTy),
@@ -556,6 +581,12 @@ pub struct CpiAccountTy {
 
 #[derive(Debug, PartialEq)]
 pub struct AccountLoaderTy {
+    // The struct type of the account.
+    pub account_type_path: TypePath,
+}
+
+#[derive(Debug, PartialEq)]
+pub struct AccountLoaderDynamicTy {
     // The struct type of the account.
     pub account_type_path: TypePath,
 }
