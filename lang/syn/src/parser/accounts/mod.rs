@@ -264,7 +264,9 @@ fn parse_ty(f: &syn::Field) -> ParseResult<Ty> {
         "UncheckedAccount" => Ty::UncheckedAccount,
         "Loader" => Ty::Loader(parse_program_account_zero_copy(&path)?),
         "AccountLoader" => Ty::AccountLoader(parse_program_account_loader(&path)?),
-        "AccountLoaderDynamic" => Ty::AccountLoaderDynamic(parse_program_mango_account_loader(&path)?),
+        "AccountLoaderDynamic" => {
+            Ty::AccountLoaderDynamic(parse_program_mango_account_loader(&path)?)
+        }
         "Account" => Ty::Account(parse_account_ty(&path)?),
         "Program" => Ty::Program(parse_program_ty(&path)?),
         "Signer" => Ty::Signer,
