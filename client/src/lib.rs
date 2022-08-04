@@ -535,12 +535,15 @@ impl<'a> RequestBuilder<'a> {
     }
 
     pub fn send(self) -> Result<Signature, ClientError> {
+        let rpc_client = RpcClient::new_with_commitment(self.cluster.clone(), self.options);
+        self.send_rpc(&rpc_client)
+    }
+
+    pub fn send_rpc(self, rpc_client: &RpcClient) -> Result<Signature, ClientError> {
         let instructions = self.instructions()?;
 
         let mut signers = self.signers;
         signers.push(&*self.payer);
-
-        let rpc_client = RpcClient::new_with_commitment(self.cluster, self.options);
 
         let tx = {
             let latest_hash = rpc_client.get_latest_blockhash()?;
@@ -554,6 +557,31 @@ impl<'a> RequestBuilder<'a> {
 
         rpc_client
             .send_and_confirm_transaction(&tx)
+            .map_err(Into::into)
+    }
+
+    pub async fn send_rpc_async(
+        self,
+        rpc_client: &solana_client::nonblocking::rpc_client::RpcClient,
+    ) -> Result<Signature, ClientError> {
+        let instructions = self.instructions()?;
+
+        let mut signers = self.signers;
+        signers.push(&*self.payer);
+
+        let tx = {
+            let latest_hash = rpc_client.get_latest_blockhash().await?;
+            Transaction::new_signed_with_payer(
+                &instructions,
+                Some(&self.payer.pubkey()),
+                &signers,
+                latest_hash,
+            )
+        };
+
+        rpc_client
+            .send_and_confirm_transaction(&tx)
+            .await
             .map_err(Into::into)
     }
 
