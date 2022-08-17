@@ -1,0 +1,8 @@
+{
+  "name": "@blockworks-foundation/anchor",
+  "version": "0.25.0",
+  "description": "Anchor client",
+  "module": "./ts/dist/esm/index.js",
+  "main": "./ts/dist/cjs/index.js",
+  "browser": "./ts/dist/browser/index.js"
+}
