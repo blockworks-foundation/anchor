@@ -239,7 +239,6 @@ fn is_field_primitive(f: &syn::Field) -> ParseResult<bool> {
             | "CpiState"
             | "Loader"
             | "AccountLoader"
-            | "AccountLoaderDynamic"
             | "Account"
             | "Program"
             | "Signer"
@@ -264,9 +263,6 @@ fn parse_ty(f: &syn::Field) -> ParseResult<Ty> {
         "UncheckedAccount" => Ty::UncheckedAccount,
         "Loader" => Ty::Loader(parse_program_account_zero_copy(&path)?),
         "AccountLoader" => Ty::AccountLoader(parse_program_account_loader(&path)?),
-        "AccountLoaderDynamic" => {
-            Ty::AccountLoaderDynamic(parse_program_mango_account_loader(&path)?)
-        }
         "Account" => Ty::Account(parse_account_ty(&path)?),
         "Program" => Ty::Program(parse_program_ty(&path)?),
         "Signer" => Ty::Signer,
@@ -338,12 +334,6 @@ fn parse_program_account_zero_copy(path: &syn::Path) -> ParseResult<LoaderTy> {
 fn parse_program_account_loader(path: &syn::Path) -> ParseResult<AccountLoaderTy> {
     let account_ident = parse_account(path)?;
     Ok(AccountLoaderTy {
-        account_type_path: account_ident,
-    })
-}
-fn parse_program_mango_account_loader(path: &syn::Path) -> ParseResult<AccountLoaderDynamicTy> {
-    let account_ident = parse_account(path)?;
-    Ok(AccountLoaderDynamicTy {
         account_type_path: account_ident,
     })
 }
