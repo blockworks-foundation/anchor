@@ -99,7 +99,20 @@ checksum = "6b2d54853319fd101b8dd81de382bcbf3e03410a64d8928bbee85a3e7dcde483"
 name = "anchor-attribute-access-control"
 version = "0.26.0"
 dependencies = [
- "anchor-syn",
+ "anchor-syn 0.26.0",
+ "anyhow",
+ "proc-macro2 1.0.49",
+ "quote 1.0.23",
+ "regex",
+ "syn 1.0.107",
+]
+
+[[package]]
+name = "anchor-attribute-access-control"
+version = "0.26.0"
+source = "git+https://github.com/blockworks-foundation/anchor.git?branch=application-fee-tests#c60dd2f0bdc890f176fd7d717246902c4a455b0f"
+dependencies = [
+ "anchor-syn 0.26.0 (git+https://github.com/blockworks-foundation/anchor.git?branch=application-fee-tests)",
  "anyhow",
  "proc-macro2 1.0.49",
  "quote 1.0.23",
@@ -111,7 +124,21 @@ dependencies = [
 name = "anchor-attribute-account"
 version = "0.26.0"
 dependencies = [
- "anchor-syn",
+ "anchor-syn 0.26.0",
+ "anyhow",
+ "bs58 0.4.0",
+ "proc-macro2 1.0.49",
+ "quote 1.0.23",
+ "rustversion",
+ "syn 1.0.107",
+]
+
+[[package]]
+name = "anchor-attribute-account"
+version = "0.26.0"
+source = "git+https://github.com/blockworks-foundation/anchor.git?branch=application-fee-tests#c60dd2f0bdc890f176fd7d717246902c4a455b0f"
+dependencies = [
+ "anchor-syn 0.26.0 (git+https://github.com/blockworks-foundation/anchor.git?branch=application-fee-tests)",
  "anyhow",
  "bs58 0.4.0",
  "proc-macro2 1.0.49",
@@ -124,7 +151,17 @@ dependencies = [
 name = "anchor-attribute-constant"
 version = "0.26.0"
 dependencies = [
- "anchor-syn",
+ "anchor-syn 0.26.0",
+ "proc-macro2 1.0.49",
+ "syn 1.0.107",
+]
+
+[[package]]
+name = "anchor-attribute-constant"
+version = "0.26.0"
+source = "git+https://github.com/blockworks-foundation/anchor.git?branch=application-fee-tests#c60dd2f0bdc890f176fd7d717246902c4a455b0f"
+dependencies = [
+ "anchor-syn 0.26.0 (git+https://github.com/blockworks-foundation/anchor.git?branch=application-fee-tests)",
  "proc-macro2 1.0.49",
  "syn 1.0.107",
 ]
@@ -133,7 +170,18 @@ dependencies = [
 name = "anchor-attribute-error"
 version = "0.26.0"
 dependencies = [
- "anchor-syn",
+ "anchor-syn 0.26.0",
+ "proc-macro2 1.0.49",
+ "quote 1.0.23",
+ "syn 1.0.107",
+]
+
+[[package]]
+name = "anchor-attribute-error"
+version = "0.26.0"
+source = "git+https://github.com/blockworks-foundation/anchor.git?branch=application-fee-tests#c60dd2f0bdc890f176fd7d717246902c4a455b0f"
+dependencies = [
+ "anchor-syn 0.26.0 (git+https://github.com/blockworks-foundation/anchor.git?branch=application-fee-tests)",
  "proc-macro2 1.0.49",
  "quote 1.0.23",
  "syn 1.0.107",
@@ -143,7 +191,19 @@ dependencies = [
 name = "anchor-attribute-event"
 version = "0.26.0"
 dependencies = [
- "anchor-syn",
+ "anchor-syn 0.26.0",
+ "anyhow",
+ "proc-macro2 1.0.49",
+ "quote 1.0.23",
+ "syn 1.0.107",
+]
+
+[[package]]
+name = "anchor-attribute-event"
+version = "0.26.0"
+source = "git+https://github.com/blockworks-foundation/anchor.git?branch=application-fee-tests#c60dd2f0bdc890f176fd7d717246902c4a455b0f"
+dependencies = [
+ "anchor-syn 0.26.0 (git+https://github.com/blockworks-foundation/anchor.git?branch=application-fee-tests)",
  "anyhow",
  "proc-macro2 1.0.49",
  "quote 1.0.23",
@@ -154,7 +214,19 @@ dependencies = [
 name = "anchor-attribute-program"
 version = "0.26.0"
 dependencies = [
- "anchor-syn",
+ "anchor-syn 0.26.0",
+ "anyhow",
+ "proc-macro2 1.0.49",
+ "quote 1.0.23",
+ "syn 1.0.107",
+]
+
+[[package]]
+name = "anchor-attribute-program"
+version = "0.26.0"
+source = "git+https://github.com/blockworks-foundation/anchor.git?branch=application-fee-tests#c60dd2f0bdc890f176fd7d717246902c4a455b0f"
+dependencies = [
+ "anchor-syn 0.26.0 (git+https://github.com/blockworks-foundation/anchor.git?branch=application-fee-tests)",
  "anyhow",
  "proc-macro2 1.0.49",
  "quote 1.0.23",
@@ -166,8 +238,8 @@ name = "anchor-cli"
 version = "0.26.0"
 dependencies = [
  "anchor-client",
- "anchor-lang",
- "anchor-syn",
+ "anchor-lang 0.26.0",
+ "anchor-syn 0.26.0",
  "anyhow",
  "cargo_toml",
  "chrono",
@@ -198,7 +270,7 @@ dependencies = [
 name = "anchor-client"
 version = "0.26.0"
 dependencies = [
- "anchor-lang",
+ "anchor-lang 0.26.0",
  "anyhow",
  "regex",
  "serde",
@@ -213,7 +285,19 @@ dependencies = [
 name = "anchor-derive-accounts"
 version = "0.26.0"
 dependencies = [
- "anchor-syn",
+ "anchor-syn 0.26.0",
+ "anyhow",
+ "proc-macro2 1.0.49",
+ "quote 1.0.23",
+ "syn 1.0.107",
+]
+
+[[package]]
+name = "anchor-derive-accounts"
+version = "0.26.0"
+source = "git+https://github.com/blockworks-foundation/anchor.git?branch=application-fee-tests#c60dd2f0bdc890f176fd7d717246902c4a455b0f"
+dependencies = [
+ "anchor-syn 0.26.0 (git+https://github.com/blockworks-foundation/anchor.git?branch=application-fee-tests)",
  "anyhow",
  "proc-macro2 1.0.49",
  "quote 1.0.23",
@@ -224,13 +308,34 @@ dependencies = [
 name = "anchor-lang"
 version = "0.26.0"
 dependencies = [
- "anchor-attribute-access-control",
- "anchor-attribute-account",
- "anchor-attribute-constant",
- "anchor-attribute-error",
- "anchor-attribute-event",
- "anchor-attribute-program",
- "anchor-derive-accounts",
+ "anchor-attribute-access-control 0.26.0",
+ "anchor-attribute-account 0.26.0",
+ "anchor-attribute-constant 0.26.0",
+ "anchor-attribute-error 0.26.0",
+ "anchor-attribute-event 0.26.0",
+ "anchor-attribute-program 0.26.0",
+ "anchor-derive-accounts 0.26.0",
+ "arrayref",
+ "base64 0.13.1",
+ "bincode",
+ "borsh",
+ "bytemuck",
+ "solana-program 1.13.5",
+ "thiserror",
+]
+
+[[package]]
+name = "anchor-lang"
+version = "0.26.0"
+source = "git+https://github.com/blockworks-foundation/anchor.git?branch=application-fee-tests#c60dd2f0bdc890f176fd7d717246902c4a455b0f"
+dependencies = [
+ "anchor-attribute-access-control 0.26.0 (git+https://github.com/blockworks-foundation/anchor.git?branch=application-fee-tests)",
+ "anchor-attribute-account 0.26.0 (git+https://github.com/blockworks-foundation/anchor.git?branch=application-fee-tests)",
+ "anchor-attribute-constant 0.26.0 (git+https://github.com/blockworks-foundation/anchor.git?branch=application-fee-tests)",
+ "anchor-attribute-error 0.26.0 (git+https://github.com/blockworks-foundation/anchor.git?branch=application-fee-tests)",
+ "anchor-attribute-event 0.26.0 (git+https://github.com/blockworks-foundation/anchor.git?branch=application-fee-tests)",
+ "anchor-attribute-program 0.26.0 (git+https://github.com/blockworks-foundation/anchor.git?branch=application-fee-tests)",
+ "anchor-derive-accounts 0.26.0 (git+https://github.com/blockworks-foundation/anchor.git?branch=application-fee-tests)",
  "arrayref",
  "base64 0.13.1",
  "bincode",
@@ -244,7 +349,7 @@ dependencies = [
 name = "anchor-spl"
 version = "0.26.0"
 dependencies = [
- "anchor-lang",
+ "anchor-lang 0.26.0 (git+https://github.com/blockworks-foundation/anchor.git?branch=application-fee-tests)",
  "borsh",
  "mpl-token-metadata",
  "serum_dex",
@@ -256,6 +361,24 @@ dependencies = [
 [[package]]
 name = "anchor-syn"
 version = "0.26.0"
+dependencies = [
+ "anyhow",
+ "bs58 0.3.1",
+ "heck 0.3.3",
+ "proc-macro2 1.0.49",
+ "proc-macro2-diagnostics",
+ "quote 1.0.23",
+ "serde",
+ "serde_json",
+ "sha2 0.9.9",
+ "syn 1.0.107",
+ "thiserror",
+]
+
+[[package]]
+name = "anchor-syn"
+version = "0.26.0"
+source = "git+https://github.com/blockworks-foundation/anchor.git?branch=application-fee-tests#c60dd2f0bdc890f176fd7d717246902c4a455b0f"
 dependencies = [
  "anyhow",
  "bs58 0.3.1",

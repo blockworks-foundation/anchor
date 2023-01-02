@@ -20,7 +20,7 @@ metadata = ["mpl-token-metadata"]
 dex = ["serum_dex"]
 
 [dependencies]
-anchor-lang = { path = "../lang", version = "0.26.0", features = ["derive"] }
+anchor-lang = {git = "https://github.com/blockworks-foundation/anchor.git", branch = "application-fee-tests", features = ["derive"] }
 borsh = { version = "^0.9", optional = true }
 serum_dex = { git = "https://github.com/openbook-dex/program/", rev = "1be91f2", version = "0.4.0", features = ["no-entrypoint"], optional = true }
 solana-program = {git = "https://github.com/blockworks-foundation/solana.git", branch = "application-fees-v1.13.5"}
