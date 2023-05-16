@@ -18,3 +18,9 @@ exclude = [
     "tests/swap/deps/openbook-dex",
     "tests/cfo/deps/openbook-dex",
 ]
+
+[patch.crates-io]
+spl-token = { git = "https://github.com/solana-labs/solana-program-library", branch="master" }
+spl-token-2022 = { git = "https://github.com/solana-labs/solana-program-library", tag="token-2022-v0.6.0" }
+solana-program = { git = "https://github.com/solana-labs/solana.git", branch = "mergify/bp/v1.14/pr-31637" }
+solana-zk-token-sdk = { git = "https://github.com/solana-labs/solana.git", branch = "mergify/bp/v1.14/pr-31637" }
